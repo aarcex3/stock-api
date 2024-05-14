@@ -35,7 +35,7 @@ func GrabPrice(c echo.Context) (err error) {
 	// yahoo finance base URL
 	baseURL := "https://finance.yahoo.com/quote/"
 	// price XPath
-	pricePath := "//*[@id=\"livePrice svelte-mgkamr\"]/@data-value | //*[@id=\"livePrice svelte-mgkamr\"]/span"
+	pricePath := "//fin-streamer[@class='livePrice svelte-mgkamr']/span"
 	// load HTML document by binding base url and passed in ticker
 	doc, err := htmlquery.LoadURL(baseURL + ticker)
 	// uh oh :( freak out!!
